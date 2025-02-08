@@ -1,32 +1,14 @@
 function goToPage(pageNumber) {
+  // Hide all pages
   document.querySelectorAll('.page').forEach(page => {
     page.style.display = 'none';
   });
+
+  // Show the selected page
   document.getElementById(`page-${pageNumber}`).style.display = 'flex';
 }
 
-// Mini Game Logic
-function handleYes() {
-  const message = document.createElement('p');
-  message.innerHTML = "I love you too! 💖";
-  message.style.fontSize = '2rem';
-  message.style.color = '#FF5678';
-  message.style.animation = 'fadeIn 1s ease-in-out';
-  document.querySelector('#page-4 .content').appendChild(message);
-}
-
-function handleNo(event) {
-  const noButton = event.target;
-  const buttonWidth = noButton.offsetWidth;
-  const buttonHeight = noButton.offsetHeight;
-  const randomX = Math.floor(Math.random() * (window.innerWidth - buttonWidth));
-  const randomY = Math.floor(Math.random() * (window.innerHeight - buttonHeight));
-  noButton.style.position = 'absolute';
-  noButton.style.left = `${randomX}px`;
-  noButton.style.top = `${randomY}px`;
-}
-
-// Photo Slideshow Logic
+// **Slideshow Functionality**
 const slides = [
   { img: "photo1.jpg", text: "Our first trip together!" },
   { img: "photo2.jpg", text: "A beautiful memory from last summer." },
@@ -50,6 +32,30 @@ setInterval(() => {
 
 // Initial load
 updateSlide();
+
+// **Mini-Game Functionality**
+function playMiniGame() {
+  goToPage(4); // Go to mini-game page
+}
+
+function handleYesClick() {
+  const message = document.getElementById("loveMessage");
+  message.innerText = "I love you toooo!";
+  message.style.opacity = "1";
+  message.style.transform = "scale(1.2)";
+}
+
+function moveNoButton() {
+  const noButton = document.getElementById("noButton");
+  const maxX = window.innerWidth - noButton.offsetWidth;
+  const maxY = window.innerHeight - noButton.offsetHeight;
+  
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  noButton.style.position = "absolute";
+  noButton.style.left = `${randomX}px`;
+  noButton.style.top = `${randomY}px`;
 }
 
 // Adding fade-in animation
