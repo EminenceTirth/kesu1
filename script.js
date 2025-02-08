@@ -31,7 +31,7 @@ function updateSlide() {
 setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   updateSlide();
-}, 3000);
+}, 5000);
 
 // **Mini-Game Functionality**
 function handleYesClick() {
