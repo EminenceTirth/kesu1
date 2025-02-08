@@ -10,28 +10,37 @@ function goToPage(pageNumber) {
 
 // **Slideshow Functionality (Auto-play)**
 const slides = [
-  { img: "photo1.jpg", text: "Our first trip together!" },
-  { img: "IMG-20240628-WA0013.jpg", text: "Remember this?😂 yhi proof hai yha se hi to mijhe har jagah tu dikh rhi thi" },
-  { img: "photo3.jpg", text: "That unforgettable dinner date!" }
+    { img: "photo1.jpg", text: "Our first trip together!" },
+    { img: "photo2.jpg", text: "A beautiful memory from last summer." },
+    { img: "photo3.jpg", text: "That unforgettable dinner date!" },
+    { img: "photo4.jpg", text: "Our favorite festival celebration!" }
 ];
 
 let currentSlide = 0;
 
+// Function to update the slide
 function updateSlide() {
-  document.getElementById("slideImage").src = slides[currentSlide].img;
-  document.getElementById("slideText").innerText = slides[currentSlide].text;
+    const slideImage = document.getElementById("slideImage");
+    const slideText = document.getElementById("slideText");
+
+    slideImage.src = slides[currentSlide].img;
+    slideText.innerText = slides[currentSlide].text;
 }
 
+// Navigate to the previous slide
+function previousSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlide();
+}
+
+// Navigate to the next slide
 function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  updateSlide();
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide();
 }
 
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  updateSlide();
-}
-
+// Initialize the slideshow on page load
+document.addEventListener("DOMContentLoaded", updateSlide);
 
 // **Mini-Game Functionality**
 function handleYesClick() {
