@@ -8,7 +8,7 @@ function goToPage(pageNumber) {
   document.getElementById(`page-${pageNumber}`).style.display = 'flex';
 }
 
-// **Slideshow Functionality**
+// **Slideshow Functionality (Auto-play)**
 const slides = [
   { img: "photo1.jpg", text: "Our first trip together!" },
   { img: "photo2.jpg", text: "A beautiful memory from last summer." },
@@ -16,9 +16,15 @@ const slides = [
 ];
 
 let currentSlide = 0;
+
 function updateSlide() {
-  document.getElementById("slideImage").src = slides[currentSlide].img;
-  document.getElementById("slideText").innerText = slides[currentSlide].text;
+  const slideImage = document.getElementById("slideImage");
+  const slideText = document.getElementById("slideText");
+
+  if (slideImage && slideText) {
+    slideImage.src = slides[currentSlide].img;
+    slideText.innerText = slides[currentSlide].text;
+  }
 }
 
 // Auto change slide every 3 seconds
@@ -30,25 +36,28 @@ setInterval(() => {
 // **Mini-Game Functionality**
 function handleYesClick() {
   const message = document.getElementById("loveMessage");
-  message.innerText = "I love youu tooo cutuuu!";
-  message.style.opacity = "1";
-  message.style.transform = "scale(1.2)";
+  
+  if (message) {
+    message.innerText = "I love youu tooo cutuuu!";
+    message.style.opacity = "1";
+    message.style.transform = "scale(1.2)";
+  }
 }
 
 function moveNoButton() {
   const noButton = document.getElementById("noButton");
+  
+  if (noButton) {
+    const maxX = window.innerWidth - noButton.offsetWidth - 20;
+    const maxY = window.innerHeight - noButton.offsetHeight - 20;
 
-  if (!noButton) return; // Prevent errors if the button isn't found
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
 
-  const maxX = window.innerWidth - noButton.offsetWidth - 20;
-  const maxY = window.innerHeight - noButton.offsetHeight - 20;
-
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
-
-  noButton.style.position = "absolute";
-  noButton.style.left = `${randomX}px`;
-  noButton.style.top = `${randomY}px`;
+    noButton.style.position = "absolute";
+    noButton.style.left = `${randomX}px`;
+    noButton.style.top = `${randomY}px`;
+  }
 }
 
 // **Ensure everything initializes correctly**
@@ -60,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     goToPage(2);
   });
 
-  // Ensure Yes and No buttons work in the mini-game
+  // Attach event listeners for the Mini-Game
   const yesButton = document.getElementById("yesButton");
   const noButton = document.getElementById("noButton");
 
