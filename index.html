@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page" id="page-1">
+    <div class="content">
+      <h1>Happy Birthday, Love!</h1>
+      <p>You make every moment special. Let's celebrate!</p>
+      <button class="btn" onclick="goToPage(2)">Next</button>
+    </div>
+  </div>
+
+  <div class="page" id="page-2" style="display: none;">
+    <div class="content">
+      <h1>Choose an Option</h1>
+      <button class="btn" onclick="showPhotoSlides()">Photo Slides</button>
+      <button class="btn" onclick="playMiniGame()">Mini Game</button>
+      <button class="btn small" onclick="goToPage(1)">Back</button>
+    </div>
+  </div>
+
+  <div class="page" id="page-3" style="display: none;">
+    <div class="content">
+      <h1>Appreciation Page</h1>
+      <p>Thank you for being the most amazing person in my life. You light up my world in ways I can't describe. Love you endlessly!</p>
+      <button class="btn small" onclick="goToPage(2)">Back</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
