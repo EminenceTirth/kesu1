@@ -13,7 +13,7 @@ function playMiniGame() {
 }
 
 function handleYes() {
-  // Create the message element
+  // Create the message element with the "I love you too" text
   const message = document.createElement('p');
   message.innerHTML = "I love you too! 💖";
   message.style.fontSize = '2rem';
