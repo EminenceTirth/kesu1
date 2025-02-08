@@ -28,9 +28,9 @@ function handleNo(event) {
 
 // Photo Slideshow Logic
 const slides = [
-  { img: "image1.jpg", text: "This is our first special moment together." },
-  { img: "image2.jpg", text: "The time we laughed until we cried." },
-  { img: "image3.jpg", text: "A beautiful memory I'll always cherish." }
+  { img: "photo1.jpg", text: "Our first trip together!" },
+  { img: "photo2.jpg", text: "A beautiful memory from last summer." },
+  { img: "photo3.jpg", text: "That unforgettable dinner date!" }
 ];
 
 let currentSlide = 0;
@@ -42,14 +42,14 @@ function updateSlide() {
   slideText.innerText = slides[currentSlide].text;
 }
 
-function nextSlide() {
+// Auto change slide every 3 seconds
+setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   updateSlide();
-}
+}, 3000);
 
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  updateSlide();
+// Initial load
+updateSlide();
 }
 
 // Adding fade-in animation
