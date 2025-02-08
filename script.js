@@ -18,20 +18,20 @@ const slides = [
 let currentSlide = 0;
 
 function updateSlide() {
-  const slideImage = document.getElementById("slideImage");
-  const slideText = document.getElementById("slideText");
-
-  if (slideImage && slideText) {
-    slideImage.src = slides[currentSlide].img;
-    slideText.innerText = slides[currentSlide].text;
-  }
+  document.getElementById("slideImage").src = slides[currentSlide].img;
+  document.getElementById("slideText").innerText = slides[currentSlide].text;
 }
 
-// Auto change slide every 3 seconds
-setInterval(() => {
+function nextSlide() {
   currentSlide = (currentSlide + 1) % slides.length;
   updateSlide();
-}, 5000);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateSlide();
+}
+
 
 // **Mini-Game Functionality**
 function handleYesClick() {
