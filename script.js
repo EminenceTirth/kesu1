@@ -30,13 +30,16 @@ setInterval(() => {
 // **Mini-Game Functionality**
 function handleYesClick() {
   const message = document.getElementById("loveMessage");
-  message.innerText = "I love you toooo!";
+  message.innerText = "I love youu tooo cutuuu!";
   message.style.opacity = "1";
   message.style.transform = "scale(1.2)";
 }
 
 function moveNoButton() {
   const noButton = document.getElementById("noButton");
+
+  if (!noButton) return; // Prevent errors if the button isn't found
+
   const maxX = window.innerWidth - noButton.offsetWidth - 20;
   const maxY = window.innerHeight - noButton.offsetHeight - 20;
 
@@ -62,5 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const noButton = document.getElementById("noButton");
 
   if (yesButton) yesButton.addEventListener("click", handleYesClick);
-  if (noButton) noButton.addEventListener("mouseover", moveNoButton);
+  
+  if (noButton) {
+    noButton.addEventListener("mouseover", moveNoButton); // Move on hover (PC)
+    noButton.addEventListener("touchstart", moveNoButton); // Move on touch (Mobile)
+  }
 });
