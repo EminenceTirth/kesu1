@@ -58,12 +58,14 @@ function moveNoButton() {
   noButton.style.top = `${randomY}px`;
 }
 
-// Adding fade-in animation
-const style = document.createElement('style');
-style.innerHTML = `
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-`;
-document.head.appendChild(style);
+// **Fix: Ensures page navigation works**
+document.addEventListener("DOMContentLoaded", function () {
+  // Ensure the first page is shown correctly
+  goToPage(1);
+
+  // Ensure the Next button on the first page works
+  const nextButton = document.querySelector('.btn');
+  nextButton.addEventListener('click', function() {
+    goToPage(2); // Navigate to page 2 (menu page)
+  });
+});
