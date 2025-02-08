@@ -16,12 +16,9 @@ const slides = [
 ];
 
 let currentSlide = 0;
-const slideImage = document.getElementById("slideImage");
-const slideText = document.getElementById("slideText");
-
 function updateSlide() {
-  slideImage.src = slides[currentSlide].img;
-  slideText.innerText = slides[currentSlide].text;
+  document.getElementById("slideImage").src = slides[currentSlide].img;
+  document.getElementById("slideText").innerText = slides[currentSlide].text;
 }
 
 // Auto change slide every 3 seconds
@@ -30,14 +27,7 @@ setInterval(() => {
   updateSlide();
 }, 3000);
 
-// Initial load
-updateSlide();
-
 // **Mini-Game Functionality**
-function playMiniGame() {
-  goToPage(4); // Go to mini-game page
-}
-
 function handleYesClick() {
   const message = document.getElementById("loveMessage");
   message.innerText = "I love you toooo!";
@@ -47,9 +37,9 @@ function handleYesClick() {
 
 function moveNoButton() {
   const noButton = document.getElementById("noButton");
-  const maxX = window.innerWidth - noButton.offsetWidth;
-  const maxY = window.innerHeight - noButton.offsetHeight;
-  
+  const maxX = window.innerWidth - noButton.offsetWidth - 20;
+  const maxY = window.innerHeight - noButton.offsetHeight - 20;
+
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
@@ -58,14 +48,19 @@ function moveNoButton() {
   noButton.style.top = `${randomY}px`;
 }
 
-// **Fix: Ensures page navigation works**
+// **Ensure everything initializes correctly**
 document.addEventListener("DOMContentLoaded", function () {
-  // Ensure the first page is shown correctly
-  goToPage(1);
+  goToPage(1); // Start on the first page
 
-  // Ensure the Next button on the first page works
-  const nextButton = document.querySelector('.btn');
-  nextButton.addEventListener('click', function() {
-    goToPage(2); // Navigate to page 2 (menu page)
+  // Ensure "Next" button on the first page navigates correctly
+  document.querySelector('.btn').addEventListener('click', function() {
+    goToPage(2);
   });
+
+  // Ensure Yes and No buttons work in the mini-game
+  const yesButton = document.getElementById("yesButton");
+  const noButton = document.getElementById("noButton");
+
+  if (yesButton) yesButton.addEventListener("click", handleYesClick);
+  if (noButton) noButton.addEventListener("mouseover", moveNoButton);
 });
