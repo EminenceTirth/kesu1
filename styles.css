@@ -42,6 +42,47 @@ p {
   margin: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+#slideshow {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#slideImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#slideText {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.slideshow-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slideshow-controls .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    background: linear-gradient(to right, #FF5678, #FF9A8B);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slideshow-controls .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 87, 120, 0.5);
+}
 #yesButton, #noButton {
   background: linear-gradient(to right, #FF5678, #FF9A8B);
   border: none;
