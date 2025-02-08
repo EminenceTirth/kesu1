@@ -11,7 +11,7 @@ function goToPage(pageNumber) {
 // **Slideshow Functionality (Auto-play)**
 const slides = [
   { img: "photo1.jpg", text: "Our first trip together!" },
-  { img: "photo2.jpg", text: "A beautiful memory from last summer." },
+  { img: "IMG-20240628-WA0013.jpg", text: "Remember this?😂 yhi proof hai yha se hi to mijhe har jagah tu dikh rhi thi" },
   { img: "photo3.jpg", text: "That unforgettable dinner date!" }
 ];
 
