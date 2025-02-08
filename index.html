@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,28 +20,42 @@
   <div class="page" id="page-2" style="display: none;">
     <div class="content">
       <h1>Choose an Option</h1>
-      <button class="btn" onclick="showPhotoSlides()">Photo Slides</button>
-      <button class="btn" onclick="playMiniGame()">Mini Game</button>
-      <button class="btn small" onclick="goToPage(3)">Next</button> <!-- Changed from 'Appreciation' to 'Next' -->
+      <button class="btn" onclick="goToPage(3)">Memories</button> <!-- Leads to Slideshow -->
+      <button class="btn" onclick="goToPage(4)">Mini Game</button> <!-- Leads to Mini Game -->
+      <button class="btn small" onclick="goToPage(5)">Next</button> <!-- Leads to Appreciation -->
     </div>
   </div>
 
-  <!-- Page 3: Next Page (previously Appreciation) -->
+  <!-- Page 3: Photo Slideshow (Memories) -->
   <div class="page" id="page-3" style="display: none;">
     <div class="content">
-      <h1>Next</h1>
-      <p>Thank you for being the most amazing person in my life. You light up my world in ways I can't describe. Love you endlessly!</p>
+      <h1>Memories</h1>
+      <div class="slideshow-container">
+        <img id="slideImage" src="image1.jpg" alt="Memory 1">
+        <p id="slideText">This is our first special moment together.</p>
+      </div>
+      <button class="btn small" onclick="prevSlide()">Previous</button>
+      <button class="btn small" onclick="nextSlide()">Next</button>
       <button class="btn small" onclick="goToPage(2)">Back to Menu</button>
     </div>
   </div>
 
-  <!-- Page 4: Mini-game page -->
+  <!-- Page 4: Mini Game -->
   <div class="page" id="page-4" style="display: none;">
     <div class="content">
       <h1>Do You Love Me?</h1>
-      <button class="btn" onclick="handleYes()">Yes, I do!</button> <!-- Yes button -->
-      <button class="btn" onclick="handleNo(event)">No</button> <!-- No button -->
-      <button class="btn small" onclick="goToPage(2)">Back to Menu</button> <!-- Back to menu -->
+      <button class="btn" onclick="handleYes()">Yes, I do!</button>
+      <button class="btn" onclick="handleNo(event)">No</button>
+      <button class="btn small" onclick="goToPage(2)">Back to Menu</button>
+    </div>
+  </div>
+
+  <!-- Page 5: Appreciation Page -->
+  <div class="page" id="page-5" style="display: none;">
+    <div class="content">
+      <h1>Appreciation</h1>
+      <p>Thank you for being the most amazing person in my life. You light up my world in ways I can't describe. Love you endlessly!</p>
+      <button class="btn" onclick="goToPage(1)">Restart</button> <!-- Restart button only -->
     </div>
   </div>
 
