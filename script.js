@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".btn").addEventListener("click", function () {
+    goToPage(2);
+  });
+});
 function goToPage(pageNumber) {
   // Hide all pages
   document.querySelectorAll('.page').forEach(page => {
