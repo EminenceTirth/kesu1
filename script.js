@@ -43,16 +43,31 @@ function nextSlide() {
 document.addEventListener("DOMContentLoaded", updateSlide);
 
 // **Mini-Game Functionality**
-function handleYesClick() {
-  const message = document.getElementById("loveMessage");
-  
-  if (message) {
-    message.innerText = "I love youu tooo cutuuu!";
-    message.style.opacity = "1";
-    message.style.transform = "scale(1.2)";
-  }
-}
+let loveClickCount = 0; // Counter for Yes button clicks
 
+function yesClicked() {
+    const messageContainer = document.getElementById("loveMessage");
+    loveClickCount++;
+
+    let message = "";
+
+    // Change message based on click count
+    if (loveClickCount === 1) {
+        message = "I love youu too cutuuu 😚🫶🏻";
+    } else if (loveClickCount === 2) {
+        message = "I love youu moreee 😚";
+    } else if (loveClickCount === 3) {
+        message = "I love youuuu the mostttttt 🫶🏻🥰";
+    } else if (loveClickCount === 4) {
+        message = "I lovee youuu ♾️";
+    } else {
+        message = "I love youuu ♾️🫶🏻"; // Repeat this message for subsequent clicks
+    }
+
+    // Update the message container
+    messageContainer.innerText = message;
+    messageContainer.style.animation = "fadeIn 0.5s ease-in-out"; // Add fade-in animation
+}
 function moveNoButton() {
   const noButton = document.getElementById("noButton");
   
