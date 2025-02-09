@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".btn").addEventListener("click", function () {
+  document.querySelector("#page-1 .btn").addEventListener("click", function () {
     goToPage(2);
   });
 });
