@@ -43,30 +43,33 @@ function nextSlide() {
 document.addEventListener("DOMContentLoaded", updateSlide);
 
 // **Mini-Game Functionality**
-let loveClickCount = 0; // Counter for Yes button clicks
+// Define the messages to display on each click
+const loveMessages = [
+  "I love youu too cutuuu 😚🫶🏻",
+  "I love youu moreee 😚",
+  "I love youuuu the mostttttt 🫶🏻🥰",
+  "I lovee youuu ♾️",
+  "I love youuu ♾️🫶🏻"
+];
 
-function yesClicked() {
-    const messageContainer = document.getElementById("loveMessage");
-    loveClickCount++;
+let clickCount = 0; // Track the number of clicks
 
-    let message = "";
+function handleYesClick() {
+  const message = document.getElementById("loveMessage");
 
-    // Change message based on click count
-    if (loveClickCount === 1) {
-        message = "I love youu too cutuuu 😚🫶🏻";
-    } else if (loveClickCount === 2) {
-        message = "I love youu moreee 😚";
-    } else if (loveClickCount === 3) {
-        message = "I love youuuu the mostttttt 🫶🏻🥰";
-    } else if (loveClickCount === 4) {
-        message = "I lovee youuu ♾️";
-    } else {
-        message = "I love youuu ♾️🫶🏻"; // Repeat this message for subsequent clicks
-    }
+  if (message) {
+    // Display the corresponding message based on the click count
+    const currentMessage = loveMessages[Math.min(clickCount, loveMessages.length - 1)];
+    message.innerText = currentMessage;
 
-    // Update the message container
-    messageContainer.innerText = message;
-    messageContainer.style.animation = "fadeIn 0.5s ease-in-out"; // Add fade-in animation
+    // Add animations for the text
+    message.style.opacity = "1";
+    message.style.transform = "scale(1.2)";
+    message.style.transition = "all 0.5s ease";
+
+    clickCount++; // Increment the click count
+  }
+}
 }
 function moveNoButton() {
   const noButton = document.getElementById("noButton");
