@@ -6,12 +6,12 @@ function goToPage(pageNumber) {
   document.getElementById(`page-${pageNumber}`).style.display = 'flex';
 }
 
-// Slideshow functionality
+// **Slideshow Functionality (Auto-play)**
 const slides = [
-  { src: "image1.jpg", text: "This is our first special moment together." },
-  { src: "image2.jpg", text: "A beautiful day we spent together." },
-  { src: "image3.jpg", text: "Our cutest and happiest memory!" },
-  { src: "image4.jpg", text: "The moment that made us smile endlessly." }
+    { img: "Screenshot_2024_0326_130426.jpg", text: "Remember the 1st time you accepted to just give our relationship a try in feb. this was the 1st time that you gave me hinttt!" },
+    { img: "IMG-20240628-WA0013.jpg", text: "You returned , and vo kehte haina har jagah uske references dikhte hai , yup yha bhi vhi ho rha tha , lol" },
+    { img: "photo3.jpg", text: "That unforgettable dinner date!" },
+    { img: "photo4.jpg", text: "Our favorite festival celebration!" }
 ];
 
 let currentSlide = 0;
