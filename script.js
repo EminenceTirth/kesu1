@@ -10,7 +10,7 @@ function goToPage(pageNumber) {
 
 // **Slideshow Functionality (Auto-play)**
 const slides = [
-    { img: "photo1.jpg", text: "Our first trip together!" },
+    { img: "Screenshot_2024_0326_130426.jpg", text: "Remember the 1st time you accepted to just give our relationship a try in feb. this was the 1st time that you gave me hinttt!" },
     { img: "photo2.jpg", text: "A beautiful memory from last summer." },
     { img: "photo3.jpg", text: "That unforgettable dinner date!" },
     { img: "photo4.jpg", text: "Our favorite festival celebration!" }
