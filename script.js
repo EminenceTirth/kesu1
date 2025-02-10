@@ -18,8 +18,9 @@ let currentSlide = 0;
 
 // Function to update slideshow
 function updateSlide() {
-  const slideImage = document.getElementById("slideImage");
-  const slideText = document.getElementById("slideText");
+  document.getElementById("slideImage").src = slides[currentSlide].img; // Use the correct property
+  document.getElementById("slideText").textContent = slides[currentSlide].text;
+}
 
   // **Fix: Correctly update the image and text**
   slideImage.src = slides[currentSlide].img;  // Make sure to use .img property
