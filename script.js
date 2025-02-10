@@ -12,6 +12,7 @@ const slides = [
     { img: "20250210_193223.png", text: "You Returned , and This was the first time we talked on call !!!!! " },
     { img: "IMG_20250210_200119.jpg", text: "HAHAHA ye vhi moment hai jahase ham dono khulke sab bole the ofc iykyk 😋 yhi to moment tha jisse ham relationship me aa paaye"},
     { img: "IMG-20240628-WA0013.jpg", text: " Vo kehte haina har jagah uske references dikhte hai, yup yha bhi vhi ho rha tha, lol" },
+    { img: "IMG_20241216_230046.jpg", text: "Isme bahot maja aa rha tha fr fr , Tera baar baar girna 😂 Dono ka saathme chalnaa ,vo ek dusro ko uthaake fenkna😂 , it was so funnn !! " },
     { img: "Screenshot_20241228_225252.jpg", text: "WE VIDEO CALLED AND TALKED FOR THE FIRST TIMEEEEEEEEE!!!!! " },
     { img: "Screenshot_20241229_224820.jpg", text: "😂....And We continued video calling and capturing great memories and we are still going on😙" }
 ];
