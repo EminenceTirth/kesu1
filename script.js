@@ -6,7 +6,7 @@ function goToPage(pageNumber) {
   document.getElementById(`page-${pageNumber}`).style.display = 'flex';
 }
 
-// **Slideshow Functionality (Auto-play)**
+// **Slideshow Functionality**
 const slides = [
     { img: "Screenshot_2024_0326_130426.jpg", text: "Remember the 1st time you accepted to just give our relationship a try in Feb. This was the first time that you gave me a hinttt!" },
     { img: "IMG-20240628-WA0013.jpg", text: "You returned, and vo kehte haina har jagah uske references dikhte hai, yup yha bhi vhi ho rha tha, lol" },
@@ -18,9 +18,8 @@ let currentSlide = 0;
 
 // Function to update slideshow
 function updateSlide() {
-  document.getElementById("slideImage").src = slides[currentSlide].img; // Use the correct property
-  document.getElementById("slideText").textContent = slides[currentSlide].text;
-}
+  const slideImage = document.getElementById("slideImage");
+  const slideText = document.getElementById("slideText");
 
   // **Fix: Correctly update the image and text**
   slideImage.src = slides[currentSlide].img;  // Make sure to use .img property
