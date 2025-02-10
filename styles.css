@@ -1,67 +1,83 @@
-/* Updated CSS */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   background: linear-gradient(to bottom right, #FFDEE9, #B5FFFC);
   color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
 }
 
 .page {
-  width: 90%;
-  max-width: 600px;
-  height: auto;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 h1 {
   font-size: 2.5rem;
   color: #FF5678;
-  margin-bottom: 20px;
 }
 
 p {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #555;
 }
 
+/* General Button Styles */
 .btn {
-  background: linear-gradient(to right, #FF5678, #FF9A8B);
-  border: none;
-  color: white;
   padding: 15px 30px;
   font-size: 1rem;
   border-radius: 25px;
   cursor: pointer;
   margin: 10px;
+  border: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover {
+/* Option Buttons */
+#yesButton {
+  background: linear-gradient(to right, #FF5678, #FF9A8B);
+  color: white;
+}
+
+#noButton {
+  background: linear-gradient(to right, #6A11CB, #2575FC);
+  color: white;
+}
+
+#yesButton:hover, #noButton:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(255, 87, 120, 0.5);
 }
 
+/* Navigation Buttons */
 .btn.small {
   padding: 10px 20px;
   font-size: 0.9rem;
+  background: linear-gradient(to right, #43C6AC, #F8FFAE);
+  color: #333;
 }
 
+.btn.small:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(67, 198, 172, 0.5);
+}
+
+/* Slideshow */
 #slideshow {
-  max-width: 100%;
+  max-width: 90%;
   margin: 0 auto;
   text-align: center;
 }
@@ -101,23 +117,7 @@ p {
   box-shadow: 0 8px 20px rgba(255, 87, 120, 0.5);
 }
 
-#yesButton, #noButton {
-  background: linear-gradient(to right, #FF5678, #FF9A8B);
-  border: none;
-  color: white;
-  padding: 15px 30px;
-  font-size: 1rem;
-  border-radius: 25px;
-  cursor: pointer;
-  margin: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#yesButton:hover, #noButton:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(255, 87, 120, 0.5);
-}
-
+/* Love Message */
 #loveMessage {
   font-size: 1.5rem;
   color: #FF5678;
@@ -140,23 +140,23 @@ p {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .page {
-    width: 70%;
-    max-width: 800px;
-    padding: 30px;
+    width: 95%;
+    height: auto;
+    padding: 10px;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .btn {
-    padding: 18px 35px;
-    font-size: 1.1rem;
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
