@@ -9,9 +9,11 @@ function goToPage(pageNumber) {
 // **Slideshow Functionality**
 const slides = [
     { img: "Screenshot_2024_0326_130426.jpg", text: "Remember the 1st time you accepted to just give our relationship a try in Feb. This was the first time that you gave me a hinttt!" },
-    { img: "IMG-20240628-WA0013.jpg", text: "You returned, and vo kehte haina har jagah uske references dikhte hai, yup yha bhi vhi ho rha tha, lol" },
-    { img: "photo3.jpg", text: "That unforgettable dinner date!" },
-    { img: "photo4.jpg", text: "Our favorite festival celebration!" }
+    { img: "20250210_193223.png", text: "You Returned , and This was the first time we talked on call !!!!! " },
+    { img: "IMG_20250210_200119.jpg", text: "HAHAHA ye vhi moment hai jahase ham dono khulke sab bole the ofc iykyk 😋 yhi to moment tha jisse ham relationship me aa paaye"},
+    { img: "IMG-20240628-WA0013.jpg", text: " Vo kehte haina har jagah uske references dikhte hai, yup yha bhi vhi ho rha tha, lol" },
+    { img: "Screenshot_20241228_225252.jpg", text: "WE VIDEO CALLED AND TALKED FOR THE FIRST TIMEEEEEEEEE!!!!! " },
+    { img: "Screenshot_20241229_224820.jpg", text: "😂....And We continued video calling and capturing great memories and we are still going on😙" }
 ];
 
 let currentSlide = 0;
