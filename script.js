@@ -8,28 +8,40 @@ function goToPage(pageNumber) {
 
 // **Slideshow Functionality (Auto-play)**
 const slides = [
-    { img: "Screenshot_2024_0326_130426.jpg", text: "Remember the 1st time you accepted to just give our relationship a try in feb. this was the 1st time that you gave me hinttt!" },
-    { img: "IMG-20240628-WA0013.jpg", text: "You returned , and vo kehte haina har jagah uske references dikhte hai , yup yha bhi vhi ho rha tha , lol" },
+    { img: "Screenshot_2024_0326_130426.jpg", text: "Remember the 1st time you accepted to just give our relationship a try in Feb. This was the first time that you gave me a hinttt!" },
+    { img: "IMG-20240628-WA0013.jpg", text: "You returned, and vo kehte haina har jagah uske references dikhte hai, yup yha bhi vhi ho rha tha, lol" },
     { img: "photo3.jpg", text: "That unforgettable dinner date!" },
     { img: "photo4.jpg", text: "Our favorite festival celebration!" }
 ];
 
 let currentSlide = 0;
 
+// Function to update slideshow
 function updateSlide() {
-  document.getElementById("slideImage").src = slides[currentSlide].src;
-  document.getElementById("slideText").textContent = slides[currentSlide].text;
+  const slideImage = document.getElementById("slideImage");
+  const slideText = document.getElementById("slideText");
+
+  // **Fix: Correctly update the image and text**
+  slideImage.src = slides[currentSlide].img;  // Make sure to use .img property
+  slideText.textContent = slides[currentSlide].text;
 }
 
+// Function to go to next slide
 function nextSlide() {
   currentSlide = (currentSlide + 1) % slides.length;
   updateSlide();
 }
 
+// Function to go to previous slide
 function prevSlide() {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   updateSlide();
 }
+
+// **Fix: Ensure first image updates properly on load**
+document.addEventListener("DOMContentLoaded", () => {
+  updateSlide();
+});
 
 // Mini Game - Yes button text sequence
 let loveMessages = [
